@@ -1,5 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useGet } from "../hooks/useGet";
+import { Hero } from "../components/Hero/Hero";
+import { SectionWrapper } from "../components/SectionWrapper/SectionWrapper";
+import { NavLink } from "react-router-dom";
+import { IoChevronBack } from "react-icons/io5";
 
 export const SingleNewsPage = () => {
   const { id } = useParams();
@@ -10,13 +14,20 @@ export const SingleNewsPage = () => {
 
   return (
     <>
-      {data && (
-        <div>
-          <img src={data.item.image} alt="" />
-          <h1>{data.item.title}</h1>
-          <p>{data.item.content}</p>
-        </div>
-      )}
+      <Hero backgroundUrl="../src/assets/images/hero1.webp" />
+      <SectionWrapper customStyling='singleNews'>
+        <span>
+        <h1>Nyheder</h1>
+        <NavLink to='/'> <IoChevronBack />Tilbage til forsiden</NavLink>
+        </span>
+        {data && (
+          <section>
+            <h1>{data.item.title}</h1>
+            <img src={data.item.image} alt="" />
+            <p>{data.item.content}</p>
+          </section>
+        )}
+      </SectionWrapper>
     </>
   );
 };
