@@ -16,7 +16,7 @@ export const NewsSection = () => {
       <h1>NYHEDER</h1>
       <GridContainer columns={3}>
         {slicedData?.map((item) => (
-          <Card custom='newsCard' image={item.image.replace('/content', '')} title={item.title} description={item.teaser}>
+          <Card key={item.id} custom='newsCard' image={item.image.replace('/content', '')} title={item.title} description={item.teaser}>
             <Button title="">
               <NavLink to="/hej">LÆS MERE</NavLink>
             </Button>

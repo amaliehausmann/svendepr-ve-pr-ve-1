@@ -1,0 +1,17 @@
+@font-face{
+    font-family: 'brush';
+    src: url('../src/assets/fonts/brush.otf');
+}
+
+@font-face{
+    font-family: 'trebuc';
+    src: url('../src/assets/fonts/trebuc.ttf');
+}
+
+%brush{
+    font-family: 'brush';
+}
+
+%trebuc{
+    font-family: 'trebuc';
+}

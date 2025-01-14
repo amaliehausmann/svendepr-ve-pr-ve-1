@@ -31,3 +31,9 @@
 }
 
 //CustomStyling
+
+.disabled{
+    background-color: grey;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
