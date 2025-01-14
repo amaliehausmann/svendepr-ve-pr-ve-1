@@ -50,7 +50,6 @@
     h1 {
       @extend %trebuc;
       text-align: left;
-      margin-bottom: 0.5vw;
       color: $black;
       font-size: 1.5vw;
       border: none;
@@ -65,6 +64,13 @@
       text-align: left;
       margin-top: 1vw;
     }
+
+    p:nth-of-type(1){
+        margin-bottom: 1vw;
+        margin-top: 0.5vw;
+        font-size: 0.8vw;
+    }
+
     img {
       width: 100%;
       border-radius: 5px;

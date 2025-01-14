@@ -23,6 +23,7 @@ export const SingleNewsPage = () => {
         {data && (
           <section>
             <h1>{data.item.title}</h1>
+            <p>Forfatter: {data.item.author}</p>
             <img src={data.item.image} alt="" />
             <p>{data.item.content}</p>
           </section>
