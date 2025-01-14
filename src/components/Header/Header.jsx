@@ -4,7 +4,7 @@ import style from './Header.module.scss'
 export const Header = () => {
   return (
     <header className={style.headerStyling}>
-        <h1>MedieSuset</h1>
+        <img src="../src/assets/images/Logo.png" alt="" />
         <h2>4 - 7. juli 2022</h2>
         <NavBar/>
     </header>
