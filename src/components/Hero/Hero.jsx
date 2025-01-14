@@ -1,8 +1,14 @@
-import style from './Hero.module.scss'
+import React from 'react';
+import style from './Hero.module.scss';
 
-export const Hero = () => {
+export const Hero = ({ backgroundUrl }) => {
   return (
-    <section className={style.heroStyling} >
+    <section
+      style={{
+        backgroundImage: `url(${backgroundUrl})`,
+      }}
+      className={style.heroStyling}
+    >
     </section>
-  )
-}
+  );
+};

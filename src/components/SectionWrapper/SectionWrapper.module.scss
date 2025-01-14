@@ -1,0 +1,17 @@
+@use '../../styles/placeholders' as *;
+@use '../../styles/variables' as *;
+
+//Basestyling
+.sectionStyling{
+    padding: 3vw 12vw;
+    text-align: center;
+}
+
+//Custom Styling
+.newsSection{
+    h1{
+        @extend %trebuc;
+        font-size: 2vw;
+        margin-bottom: 3vw;
+    }
+}

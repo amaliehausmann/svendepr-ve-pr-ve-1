@@ -4,9 +4,11 @@ export const Card = ({image, title, description, children, custom}) => {
   return (
     <div className={`${style.cardStyling} ${style[custom]}`}>
         <img src={`${image}`} alt="" />
+        <div>
         <h1>{title}</h1>
         <p>{description}</p>
         {children}
+        </div>
     </div>
   )
 }

@@ -1,20 +1,23 @@
+@use '../../styles/placeholders' as *;
+@use '../../styles/variables' as *;
+
 //BaseStyling
 .buttonStyling{
     border: none;
+    @extend %trebuc;
+    cursor: pointer;
 }
 
 
 //color
-.red{
-    background-color: red;
-}
 
 .blue{
-    background-color: blue;
+    background-color: $blue;
+    color: $white;
 }
 
-.green{
-    background-color: green;
+.grey{
+    background-color: $darkgrey;
 }
 
 //size
@@ -23,17 +26,30 @@
 }
 
 .medium{
-    padding: 2vw 4vw;
+    padding: 0 2vw;
 }
 
 .large{
-    padding: 4vw 8vw;
+    width: 100%;
+    padding: 0.8vw;
 }
 
 //CustomStyling
 
+.newscard{
+    a{
+        color: $white;
+        font-size: 0.9vw;
+        text-decoration: none;
+    }
+
+    &:hover{
+        background-color: $blue;
+        transition: ease-in-out 0.2s;
+    }
+}
 .disabled{
     background-color: grey;
     cursor: not-allowed;
-    opacity: 0.8;
+    opacity: 0.9;
 }

@@ -1,6 +1,6 @@
 import { NewsLetterSection } from "../NewsLetterSection/NewsLetterSection";
 import style from "./Footer.module.scss";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { Bounce } from "react-toastify";
 
 export const Footer = ({ action }) => {

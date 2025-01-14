@@ -33,6 +33,7 @@
 
 .gridStyling{
     display: grid;
+    gap: 1vw 2vw;
 
     @media screen and (max-width: 600px){
         grid-template-columns: 1fr;

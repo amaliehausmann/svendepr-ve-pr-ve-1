@@ -1,18 +1,55 @@
-//BaseStyling
-.cardStyling{
-  img{
-    width: 100%;
-  }  
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
 
-  h1{
-    text-align: center;
+//BaseStyling
+.cardStyling {
+  img {
+    width: 100%;
   }
 
-  p{
+  h1 {
+    @extend %trebuc;
+  }
+
+  p {
+    @extend %trebuc;
   }
 }
 
 //Custom Styling
-.newsCard{
-  
+.newsCard {
+  background-color: $lightgrey;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  img {
+    height: 50%;
+    object-fit: cover;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    padding: 1vw;
+    height: 50%;
+
+    h1 {
+      text-align: left;
+      font-size: 1.2vw;
+      font-weight: 500;
+      margin-bottom: 1vw;
+    }
+
+    p {
+      text-align: left;
+      font-size: 0.9vw;
+    }
+
+    button {
+      margin-top: auto;
+      align-self: flex-start;
+    }
+  }
 }
+

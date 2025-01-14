@@ -1,6 +1,18 @@
+@use '../../styles/placeholders' as *;
+@use '../../styles/variables' as *;
+
 .inputStyling{
     border: 1px solid grey;
     outline: none;
+    padding: 8px 0 8px 8px;
+    width: 20vw;
+    background-color: $white;
+
+    &::placeholder{
+        color: $black;
+        @extend %trebuc;
+
+    }
 
 }
 

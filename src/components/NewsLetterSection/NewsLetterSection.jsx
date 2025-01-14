@@ -35,9 +35,10 @@ export const NewsLetterSection = ({ action }) => {
         <Button
           title="TILMELD"
           color="blue"
-          custom={!isValid ? "disabled" : ""}
+          custom='newsletter'
           disabled={!isValid}
           action={action}
+          size='medium'
         ></Button>
       </span>
       <img src="../src/assets/images/hancock.png" alt="" />

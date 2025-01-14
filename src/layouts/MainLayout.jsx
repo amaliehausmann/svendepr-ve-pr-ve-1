@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Modal } from "../components/Modal/Modal";
 import { Footer } from "../components/Footer/Footer";
 import { toast } from "react-toastify";
-import { Bounce } from "react-toastify";
 
 export const MainLayout = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -14,17 +13,7 @@ export const MainLayout = () => {
       setModalIsOpen(false);
     } else {
       setModalIsOpen(true);
-
-      toast.success("Tilmelding successfuld!", {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "colored",
-        transition: Bounce,
-      });
+      toast.success("Tilmelding successfuld!");
     }
   }
 
@@ -37,6 +26,7 @@ export const MainLayout = () => {
           action={toggleModal}
           title="Tak for din tilmelding!"
           text="Du vil nu modtage nyheder fra os fremover"
+          custom='newsletter'
         />
       )}
       <Footer action={toggleModal} />

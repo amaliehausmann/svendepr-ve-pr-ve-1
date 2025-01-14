@@ -1,35 +1,85 @@
 import { NavLink } from "react-router-dom";
 import style from "./NavBar.module.scss";
 import { IoMdSearch } from "react-icons/io";
+
 export const NavBar = () => {
   return (
     <nav className={style.navStyling}>
       <ul>
         <li>
-          <NavLink to="/">FORSIDE</NavLink>
+          <NavLink 
+            to="/" 
+            className={({ isActive }) => 
+              isActive ? style.activeNavlink : style.navLink
+            }
+          >
+            FORSIDE
+          </NavLink>
         </li>
-        <li>
+        <li className={style.events}>
           <p>EVENTS</p>
           <ul>
             <li>
-              <NavLink to="/lineup">LINE-UP</NavLink>
+              <NavLink 
+                to="/lineup" 
+                className={({ isActive }) => 
+                  isActive ? style.activeNavlink : style.navLink
+                }
+              >
+                LINE-UP
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/program">PROGRAM</NavLink>
+              <NavLink 
+                to="/program" 
+                className={({ isActive }) => 
+                  isActive ? style.activeNavlink : style.navLink
+                }
+              >
+                PROGRAM
+              </NavLink>
             </li>
           </ul>
         </li>
         <li>
-          <NavLink to="/camps">CAMPS</NavLink>
+          <NavLink 
+            to="/camps" 
+            className={({ isActive }) => 
+              isActive ? style.activeNavlink : style.navLink
+            }
+          >
+            CAMPS
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/tickets">BILLETTER</NavLink>
+          <NavLink 
+            to="/tickets" 
+            className={({ isActive }) => 
+              isActive ? style.activeNavlink : style.navLink
+            }
+          >
+            BILLETTER
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/practicalinfo">PRAKTISK INFO</NavLink>
+          <NavLink 
+            to="/practicalinfo" 
+            className={({ isActive }) => 
+              isActive ? style.activeNavlink : style.navLink
+            }
+          >
+            PRAKTISK INFO
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/login">LOGIN</NavLink>
+          <NavLink 
+            to="/login" 
+            className={({ isActive }) => 
+              isActive ? style.activeNavlink : style.navLink
+            }
+          >
+            LOGIN
+          </NavLink>
         </li>
         <li>
           <IoMdSearch />

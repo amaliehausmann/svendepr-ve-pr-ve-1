@@ -1,3 +1,6 @@
+@use '../../styles/placeholders' as *;
+@use '../../styles/variables' as *;
+
 .modalStyling{
     background-color: rgba(31, 30, 30, 0.466);
     width: 100%;
@@ -12,12 +15,50 @@
         left: 50%;
         transform: translate(-50%, -50% );
         background-color: #ffff;
-        width: 500px;
-        height: 500px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
         z-index: 9999;
+        border-radius: 5px;
+
+        h1{
+            @extend %trebuc;
+            text-align: center;
+        }
+
+        p{
+            @extend %trebuc;
+            text-align: center;
+        }
+
+        svg{
+            position: absolute;
+            right: 5%;
+            top: 5%;
+            width: 2vw;
+            height: 2vw;
+
+            &:hover{
+                color: $red;
+            }
+        }
+    }
+}
+
+// custom
+
+.newsletter{
+
+    div{
+        height: 40vh;
+        h1{
+            font-size: 2.5vw;
+            margin-top: 4vw;
+            padding: 1vw 2vw 0 2vw;
+            color: $blue;
+        }
+    
+        p{
+            font-size: 1vw;
+            text-align: center;
+            padding: 1vw;
+        }
     }
 }
