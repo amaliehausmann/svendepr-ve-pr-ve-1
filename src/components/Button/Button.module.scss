@@ -27,6 +27,7 @@
 
 .medium{
     padding: 0 2vw;
+    font-size: 1vw;
 }
 
 .large{
@@ -37,10 +38,13 @@
 //CustomStyling
 
 .newscard{
+    display: flex;
+    justify-content: center;
     a{
         color: $white;
         font-size: 0.9vw;
         text-decoration: none;
+        text-align: center;
     }
 
     &:hover{
