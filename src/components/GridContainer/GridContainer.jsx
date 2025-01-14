@@ -1,10 +1,9 @@
-import style from './GridContainer.module.scss';
+import style from "./GridContainer.module.scss";
 
-export const GridContainer = ({children, columns}) => {
+export const GridContainer = ({ children, columns }) => {
   return (
-<section className={`${style.gridStyling} ${style[`column-${columns}`]}`}>
-  {children}
-</section>
-
-  )
-}
+    <section className={`${style.gridStyling} ${style[`column-${columns}`]}`}>
+      {children}
+    </section>
+  );
+};
