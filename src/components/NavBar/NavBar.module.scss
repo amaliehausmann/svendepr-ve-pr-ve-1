@@ -1,0 +1,25 @@
+.navStyling{
+
+    ul{
+        display: flex;
+        justify-content: space-between;
+        background-color: red;
+
+        li{
+            list-style: none;
+            
+            a{
+                color: white;
+            }
+        }
+    }
+}
+
+.activeNavlink{
+    text-decoration: underline;
+    font-weight: 900;
+}
+
+.navLink{
+    text-decoration: none;
+}
