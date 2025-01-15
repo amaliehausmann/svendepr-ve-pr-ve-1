@@ -53,3 +53,45 @@
   }
 }
 
+.purple, .blue, .green, .red{
+  text-align: left;
+  aspect-ratio: 1 / 1;
+  height: fit-content;
+  
+  img{
+    height: 68%;
+    object-fit: cover;
+  }
+
+  color: $white;
+
+  div{
+    padding: 1vw 1vw;
+
+    h1{
+      font-size: 1.6vw;
+    }
+
+    p{
+      font-size: 1.7vw;
+    }
+  }
+
+}
+
+.purple{
+  background-color: $purple;
+}
+
+.blue{
+  background-color: $blue;
+}
+
+.green{
+  background-color: $green;
+}
+
+.red{
+  background-color: $red;
+}
+

@@ -5,6 +5,7 @@ import { Frontpage } from "./pages/Frontpage";
 import { SingleNewsPage } from "./pages/SingleNewsPage";
 import { Login } from "./pages/Login";
 import { UserContextProvider } from "./context/userContext";
+import { Lineup } from "./pages/Lineup";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route index element={<Frontpage />}></Route>
             <Route path="/news/:id" element={<SingleNewsPage />}></Route>
             <Route path="/login" element={<Login/>}></Route>
+            <Route path="/lineup" element={<Lineup/>}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

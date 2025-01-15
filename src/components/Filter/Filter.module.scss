@@ -1,0 +1,41 @@
+@use '../../styles/placeholders' as *;
+@use '../../styles/variables' as *;
+
+.filtersection {
+
+    background-color: $darkgrey;
+    margin-bottom: 2vw;
+
+    ul{
+        display: flex;
+        justify-content: space-between;
+
+        li{
+            @extend %trebuc;
+            font-size: 2.5vw;
+            list-style: none;
+            color: white;
+            cursor: pointer;
+            padding: 1vw 2vw;
+        }
+    }
+  }
+
+  .purple:hover{
+    background-color: $purple;
+  }
+  .blue:hover{
+    background-color: $blue;
+  }
+  .green:hover{
+    background-color: $green;
+  }
+  .red:hover{
+    background-color: $red;
+  }
+
+  .grey:hover{
+    background-color: grey;
+  }
+
+ 

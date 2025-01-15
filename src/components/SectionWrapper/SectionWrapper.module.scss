@@ -138,3 +138,12 @@
     }
   }
 }
+
+.lineup{
+  padding: 3vw 10vw;
+  h1{
+    @extend %trebuc;
+    font-size: 2vw;
+    margin-bottom: 2vw;
+  }
+}
