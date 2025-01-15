@@ -8,6 +8,7 @@ import { Hero } from "../components/Hero/Hero";
 import { Modal } from "../components/Modal/Modal";
 import { UserContext } from "../context/userContext";
 import { Button } from "../components/Button/Button";
+import { toast } from "react-toastify";
 
 export const Lineup = () => {
   const [selectedFilter, setSelectedFilter] = useState(null);
@@ -60,6 +61,7 @@ export const Lineup = () => {
     }
 
     fetchData();
+    toast.success('Tilføjet til dit program!')
   }
 
   // Funktion til at åbne modal, når en artist bliver klikket

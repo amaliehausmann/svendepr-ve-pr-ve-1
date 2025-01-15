@@ -6,6 +6,7 @@ import { SingleNewsPage } from "./pages/SingleNewsPage";
 import { Login } from "./pages/Login";
 import { UserContextProvider } from "./context/userContext";
 import { Lineup } from "./pages/Lineup";
+import { MyProgram } from "./pages/MyProgram";
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
             <Route path="/news/:id" element={<SingleNewsPage />}></Route>
             <Route path="/login" element={<Login/>}></Route>
             <Route path="/lineup" element={<Lineup/>}></Route>
+            <Route path="/myprogram" element={<MyProgram/>}></Route>
+
           </Route>
         </Routes>
       </BrowserRouter>
