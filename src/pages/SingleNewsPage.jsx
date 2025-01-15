@@ -14,7 +14,7 @@ export const SingleNewsPage = () => {
 
   return (
     <>
-      <Hero backgroundUrl="../src/assets/images/hero1.webp" />
+      <Hero backgroundUrl="../src/assets/images/hero1.webp"  position='bottom'/>
       <SectionWrapper customStyling='singleNews'>
         <span>
         <h1>Nyheder</h1>

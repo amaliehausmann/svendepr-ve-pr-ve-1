@@ -18,6 +18,18 @@
 }
 
 //Custom styling
+
+.login{
+    border: 2px solid lightgray;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 15vw;
+
+    &::placeholder{
+        color: grey;
+    }
+}
+
 .invalid{
     border: 1px solid red;
 }

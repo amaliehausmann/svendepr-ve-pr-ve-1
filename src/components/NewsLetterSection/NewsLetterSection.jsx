@@ -29,7 +29,7 @@ export const NewsLetterSection = ({ action }) => {
           name="email"
           id="email"
           labelText=""
-          custom={!isValid && email ? "invalid" : ""}
+          invalid={!isValid && email ? 'invalid' : ''}
           action={handleEmailChange}
         />
         <Button

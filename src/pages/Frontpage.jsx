@@ -5,7 +5,7 @@ export const Frontpage = () => {
 
   return (
     <>
-    <Hero backgroundUrl='../src/assets/images/hero1.webp'/>
+    <Hero backgroundUrl='../src/assets/images/hero1.webp' position='bottom'/>
     <NewsSection/>
     </>
   )

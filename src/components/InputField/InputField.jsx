@@ -8,6 +8,7 @@ export const InputField = ({
   action,
   custom,
   id,
+  invalid,
 }) => {
   const onInputChange = (e) => {
     action(e.target.value);
@@ -17,7 +18,7 @@ export const InputField = ({
     <>
       {name && <label htmlFor={name}>{labelText}</label>}
       <input
-        className={`${style.inputStyling} ${style[custom]}`}
+        className={`${style.inputStyling} ${style[custom]} ${style[invalid]}`}
         onChange={(event) => onInputChange(event)}
         id={id}
         type={type}
