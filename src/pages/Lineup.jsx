@@ -1,19 +1,94 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Card } from "../components/Card/Card";
 import { GridContainer } from "../components/GridContainer/GridContainer";
 import { SectionWrapper } from "../components/SectionWrapper/SectionWrapper";
 import { useGet } from "../hooks/useGet";
 import { Filter } from "../components/Filter/Filter";
 import { Hero } from "../components/Hero/Hero";
+import { Modal } from "../components/Modal/Modal";
+import { UserContext } from "../context/userContext";
+import { Button } from "../components/Button/Button";
 
 export const Lineup = () => {
   const [selectedFilter, setSelectedFilter] = useState(null);
+  const [selectedArtist, setSelectedArtist] = useState();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState();
+  const [error, setError] = useState();
 
-  const { data, isLoading, error } = useGet(
+  // Henter alle event-data fra API'et
+  const { data: eventData } = useGet(
     "https://api.mediehuset.net/mediesuset/events"
   );
 
-  // Funktion til at formatere datoen til dansk format med "kl." mellem ugedag og tid
+  // Henter data for en specifik artist, når den er valgt
+  const { data: singleEventData } = useGet(
+    selectedArtist
+      ? `https://api.mediehuset.net/mediesuset/events/${selectedArtist}`
+      : null
+  );
+
+  //POST request
+  const { userData } = useContext(UserContext);
+
+  function addEvent(token) {
+    const body = new URLSearchParams();
+    body.append("user_id", userData.user_id);
+    body.append("event_id", selectedArtist);
+
+    async function fetchData() {
+      setIsLoading(true);
+
+      const options = {
+        method: "POST",
+        body: body,
+        redirect: "follow",
+        headers: { Authorization: `Bearer ${token}` },
+      };
+
+      try {
+        const data = await fetch(
+          "https://api.mediehuset.net/mediesuset/programme",
+          options
+        );
+        const res = await data.json();
+      } catch (err) {
+        setError(err);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    fetchData();
+  }
+
+  // Funktion til at åbne modal, når en artist bliver klikket
+  function handleArtistClick(value) {
+    setSelectedArtist(value);
+    setModalIsOpen(true);
+  }
+
+  // Funktion til at lukke modal
+  function closeModal() {
+    setModalIsOpen(false);
+    setSelectedArtist(null);
+  }
+
+  // Funktion til at bestemme stage class ud fra stage navn
+  function getStageClass(stageName) {
+    switch (stageName) {
+      case "Rød scene":
+        return "red";
+      case "Blå scene":
+        return "blue";
+      case "Grøn scene":
+        return "green";
+      default:
+        return "purple";
+    }
+  }
+
+  // Funktion til at formatere datoen til dansk format
   function FormatDate(datestring) {
     const date = new Date(datestring);
 
@@ -35,8 +110,24 @@ export const Lineup = () => {
     return `${weekday.charAt(0).toUpperCase() + weekday.slice(1)} kl. ${time}`;
   }
 
-  // Sorterer data i alfabetisk rækkefølge baseret på titel
-  const sortedData = data?.items?.sort((a, b) =>
+  // Funktion til at formatere kun tiden
+  function FormatTime(datestring) {
+    const date = new Date(datestring);
+
+    const options = {
+      hour: "2-digit",
+      minute: "2-digit",
+    };
+
+    const formattedTime = new Intl.DateTimeFormat("da-DK", options).format(
+      date
+    );
+
+    return formattedTime;
+  }
+
+  // Sorterer eventdata alfabetisk efter titel
+  const sortedData = eventData?.items?.sort((a, b) =>
     a.title.localeCompare(b.title)
   );
 
@@ -45,28 +136,24 @@ export const Lineup = () => {
     setSelectedFilter(filter);
   }
 
-  // Filtrerer data baseret på det valgte filter. Hvis der er et filter, vises kun elementer med den scene. Hvis intet filter er valgt, vises data i alfabetisk rækkefølge.
+  // Filtrerer data baseret på valgt filter. Hvis der er et filter, vises kun elementer med den valgte scene
   const filteredData = selectedFilter
-    ? data?.items?.filter((item) => item.stage_name === selectedFilter)
-    : data?.items;
+    ? eventData?.items?.filter((item) => item.stage_name === selectedFilter)
+    : eventData?.items;
 
   return (
     <>
-    <Hero backgroundUrl='../src/assets/images/hero1.webp' position='bottom'/>
+      <Hero backgroundUrl="../src/assets/images/hero1.webp" position="bottom" />
       <SectionWrapper customStyling="lineup">
         <h1>LINE UP</h1>
-        <Filter selectedFilter={selectedFilter} handleDataFilter={handleDataFilter}/>
+        <Filter
+          selectedFilter={selectedFilter}
+          handleDataFilter={handleDataFilter}
+        />
         <GridContainer columns={3} gap="one">
           {filteredData?.map((item) => {
             // Bestemmer hvilken class der skal anvendes til hver scene
-            let stageClass = "purple";
-            if (item.stage_name === "Rød scene") {
-              stageClass = "red";
-            } else if (item.stage_name === "Blå scene") {
-              stageClass = "blue";
-            } else if (item.stage_name === "Grøn scene") {
-              stageClass = "green";
-            }
+            let stageClass = getStageClass(item.stage_name);
 
             return (
               <Card
@@ -75,10 +162,37 @@ export const Lineup = () => {
                 title={item.title}
                 description={FormatDate(item.datetime)}
                 custom={stageClass}
+                action={() => handleArtistClick(item.id)}
               />
             );
           })}
         </GridContainer>
+
+        {modalIsOpen && singleEventData?.item && (
+          <Modal
+            custom={getStageClass(singleEventData?.item?.stage_name)}
+            action={closeModal}
+            title={singleEventData?.item?.stage_name}
+            text={"Kl." + " " + FormatTime(singleEventData?.item?.datetime)}
+          >
+            <GridContainer columns={2}>
+              <section>
+                <img src={singleEventData?.item?.image} alt="" />
+                {userData && (
+                  <Button
+                    color="blue"
+                    title="Tilføj til mit program"
+                    action={() => addEvent(userData.access_token)}
+                  ></Button>
+                )}
+              </section>
+              <section>
+                <h1>{singleEventData?.item?.title}</h1>
+                <p>{singleEventData?.item?.description}</p>
+              </section>
+            </GridContainer>
+          </Modal>
+        )}
       </SectionWrapper>
     </>
   );

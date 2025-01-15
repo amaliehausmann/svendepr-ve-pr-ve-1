@@ -1,8 +1,8 @@
 import style from './Card.module.scss'
 
-export const Card = ({image, title, description, children, custom}) => {
+export const Card = ({image, title, description, children, custom, action}) => {
   return (
-    <div className={`${style.cardStyling} ${style[custom]}`}>
+    <div className={`${style.cardStyling} ${style[custom]}`} onClick={action}>
         <img src={`${image}`} alt="" />
         <div>
         <h1>{title}</h1>
