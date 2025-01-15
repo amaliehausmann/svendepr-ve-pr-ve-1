@@ -4,10 +4,12 @@ import { MainLayout } from "./layouts/MainLayout";
 import { Frontpage } from "./pages/Frontpage";
 import { SingleNewsPage } from "./pages/SingleNewsPage";
 import { Login } from "./pages/Login";
+import { UserContextProvider } from "./context/userContext";
 
 function App() {
   return (
     <>
+    <UserContextProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>
@@ -17,6 +19,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      </UserContextProvider>
     </>
   );
 }

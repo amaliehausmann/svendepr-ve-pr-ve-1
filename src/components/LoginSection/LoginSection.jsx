@@ -3,8 +3,9 @@ import { InputField } from "../InputField/InputField";
 import { SectionWrapper } from "../SectionWrapper/SectionWrapper";
 import { FiAtSign } from "react-icons/fi";
 import { BiSolidLock } from "react-icons/bi";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { toast } from "react-toastify";
+import { UserContext } from "../../context/userContext";
 
 export const LoginSection = () => {
   const [email, setEmail] = useState("");
@@ -16,6 +17,8 @@ export const LoginSection = () => {
   const [successLoginMessage, setSuccessLoginMessage] = useState();
   const [validEmail, setValidEmail] = useState(false);
   const [validPassword, setValidPassword] = useState(false);
+
+  const {setUserData} = useContext(UserContext);
 
   function handleEmailChange(value) {
     setEmail(value);
@@ -50,6 +53,7 @@ export const LoginSection = () => {
         {
           if (res.access_token) {
             setIsLoggedIn(true);
+            setUserData(res);
             setSuccessLoginMessage(
               `Du er nu logget ind, velkommen tilbage ${res.user.firstname}`
             );
