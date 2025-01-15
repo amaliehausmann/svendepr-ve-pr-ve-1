@@ -16,6 +16,14 @@
       @extend %trebuc;
       font-size: 0.9vw;
 
+      &:hover {
+        color: $red;
+
+        a {
+          color: $red;
+        }
+      }
+
       svg {
         width: 1.4vw;
         height: 1.4vw;
@@ -49,6 +57,7 @@
       text-align: center;
       text-align: center;
       width: 100%;
+      cursor: pointer;
 
       a {
         display: block;
