@@ -1,9 +1,14 @@
 import { GridContainer } from "../components/GridContainer/GridContainer";
+import { Hero } from "../components/Hero/Hero";
 import { SectionWrapper } from "../components/SectionWrapper/SectionWrapper";
 
 export const PracticalInfo = () => {
   return (
     <>
+      <Hero
+        backgroundUrl="../src/assets/images/hero3.webp"
+        position="center 80%"
+      />
       <SectionWrapper customStyling="practicalinfo">
         <h1>PRAKTISK INFO</h1>
         <SectionWrapper customStyling="mapSection">
@@ -115,9 +120,9 @@ export const PracticalInfo = () => {
 
           <h3>Åbningstider</h3>
           <p>
-            Festivalen åbner kl. <b>10:00</b> og lukker kl.{" "}
-            <b>23:00</b> hver dag. Vi anbefaler, at du ankommer i god
-            tid for at undgå kø ved indgangen.
+            Festivalen åbner kl. <b>10:00</b> og lukker kl. <b>23:00</b> hver
+            dag. Vi anbefaler, at du ankommer i god tid for at undgå kø ved
+            indgangen.
           </p>
 
           <h3>Betaling</h3>

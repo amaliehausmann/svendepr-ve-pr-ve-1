@@ -8,6 +8,8 @@ import { UserContextProvider } from "./context/userContext";
 import { Lineup } from "./pages/Lineup";
 import { MyProgram } from "./pages/MyProgram";
 import { PracticalInfo } from "./pages/PracticalInfo";
+import { Camps } from "./pages/Camps";
+import { SingleCampPage } from "./pages/SingleCampPage";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
             <Route path="/lineup" element={<Lineup/>}></Route>
             <Route path="/myprogram" element={<MyProgram/>}></Route>
             <Route path="/practicalinfo" element={<PracticalInfo/>}></Route>
+            <Route path="/camps" element={<Camps/>}></Route>
+            <Route path="/camps/:id" element={<SingleCampPage/>}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

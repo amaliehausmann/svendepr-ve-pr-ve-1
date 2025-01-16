@@ -53,46 +53,107 @@
   }
 }
 
-.purple, .blue, .green, .red{
+.purple,
+.blue,
+.green,
+.red {
   text-align: left;
   aspect-ratio: 1 / 1;
   height: fit-content;
   cursor: pointer;
-  
-  img{
+
+  img {
     height: 60%;
     object-fit: cover;
   }
 
   color: $white;
 
-  div{
+  div {
     padding: 1vw 1vw;
 
-    h1{
+    h1 {
       font-size: 1.6vw;
     }
 
-    p{
+    p {
       font-size: 1.7vw;
     }
   }
-
 }
 
-.purple{
+.purple {
   background-color: $purple;
 }
 
-.blue{
+.blue {
   background-color: $blue;
 }
 
-.green{
+.green {
   background-color: $green;
 }
 
-.red{
+.red {
   background-color: $red;
 }
 
+.campCard {
+  display: flex;
+  flex-direction: row;
+  background-color: $blue;
+  padding: 2vw;
+  margin: 2vw 0;
+  position: relative;
+
+  @extend %trebuc;
+  color: white;
+
+  div {
+    margin: 0 2vw;
+  }
+
+  h1 {
+    text-align: left;
+    font-size: 2vw;
+    margin-bottom: 0.5vw;
+  }
+
+  h3 {
+    text-align: left;
+    margin-top: 2vw;
+    margin-bottom: 0.5vw;
+    font-size: 1.3vw;
+    font-weight: 400;
+  }
+
+  p {
+    text-align: left;
+    font-size: 1vw;
+  }
+  img {
+    width: 25%;
+    object-fit: cover;
+  }
+  &:nth-child(3) {
+    flex-direction: row-reverse;
+    background-color: $green;
+  }
+
+  &:nth-child(4) {
+    background-color: $purple;
+  }
+
+  span {
+    ul {
+      display: flex;
+      flex-direction: row;
+
+      li {
+        list-style: none;
+        padding-right: 1vw;
+        font-size: 1vw;
+      }
+    }
+  }
+}
