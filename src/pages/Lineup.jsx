@@ -61,7 +61,7 @@ export const Lineup = () => {
     }
 
     fetchData();
-    toast.success('Tilføjet til dit program!')
+    toast.success("Tilføjet til dit program!");
   }
 
   // Funktion til at åbne modal, når en artist bliver klikket

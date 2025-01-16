@@ -147,3 +147,49 @@
     margin-bottom: 2vw;
   }
 }
+
+.myProgram{
+
+  h1{
+    @extend %trebuc;
+    font-size: 2vw;
+  }
+
+  section{
+    padding: 0;
+    padding-top: 2vw;
+
+    div{
+      display: flex;
+      border-top: 1px solid $lightgrey;
+      border-bottom: 1px solid $lightgrey;
+
+      span{
+        font-size: 2vw;
+        width: 3vw;
+        @extend %trebuc;
+        padding: 1vw;
+        color: white;
+        font-weight: 400;
+      }
+
+      h1{
+        font-size: 2vw;
+        font-weight: 400;
+        text-align: left;
+        width: 100%;
+        padding-left: 2vw;
+        padding-top: 1vw;
+      }
+
+      button{
+        background-color: transparent;
+        svg{
+          width: 3vw;
+          height: 2vw;
+
+        }
+      }
+    }
+  }
+}
