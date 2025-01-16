@@ -7,6 +7,7 @@ import { Login } from "./pages/Login";
 import { UserContextProvider } from "./context/userContext";
 import { Lineup } from "./pages/Lineup";
 import { MyProgram } from "./pages/MyProgram";
+import { PracticalInfo } from "./pages/PracticalInfo";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
             <Route path="/login" element={<Login/>}></Route>
             <Route path="/lineup" element={<Lineup/>}></Route>
             <Route path="/myprogram" element={<MyProgram/>}></Route>
-
+            <Route path="/practicalinfo" element={<PracticalInfo/>}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

@@ -5,6 +5,7 @@ import { SectionWrapper } from "../components/SectionWrapper/SectionWrapper";
 import { Button } from "../components/Button/Button";
 import { IoMdClose } from "react-icons/io";
 import { toast } from "react-toastify";
+import { Hero } from "../components/Hero/Hero";
 
 export const MyProgram = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -87,7 +88,9 @@ export const MyProgram = () => {
   }
 
   return (
-    <SectionWrapper customStyling="myProgram">
+    <>
+    <Hero backgroundUrl='../src/assets/images/hero1.webp' position='bottom'/>
+        <SectionWrapper customStyling="myProgram">
       <h1>MIT PROGRAM</h1>
       <SectionWrapper>
         {programData.length > 0 ? (
@@ -111,5 +114,6 @@ export const MyProgram = () => {
         )}
       </SectionWrapper>
     </SectionWrapper>
+    </>
   );
 };
