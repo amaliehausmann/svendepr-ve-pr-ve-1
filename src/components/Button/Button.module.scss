@@ -20,6 +20,23 @@
     background-color: $darkgrey;
 }
 
+.red{
+    background-color: $red;
+    color: white;
+}
+
+.purple{
+    background-color: $purple;
+    color: white;
+}
+
+.green{
+    background-color: $green;
+    color: white;
+}
+
+
+
 //size
 .small{
     padding: 1vw 2vw;
@@ -92,4 +109,10 @@
         transition: ease 0.5s;
     }
 
+}
+
+.singleArtist{
+    padding: 1vw 2vw;
+    font-size: 1.2vw;
+    margin: 1vw 0;
 }

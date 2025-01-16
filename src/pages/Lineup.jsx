@@ -9,6 +9,9 @@ import { Modal } from "../components/Modal/Modal";
 import { UserContext } from "../context/userContext";
 import { Button } from "../components/Button/Button";
 import { toast } from "react-toastify";
+import { AiFillInstagram } from "react-icons/ai";
+import { AiFillFacebook } from "react-icons/ai";
+import { AiFillSpotify } from "react-icons/ai";
 
 export const Lineup = () => {
   const [selectedFilter, setSelectedFilter] = useState(null);
@@ -182,11 +185,17 @@ export const Lineup = () => {
                 <img src={singleEventData?.item?.image} alt="" />
                 {userData && (
                   <Button
-                    color="blue"
+                    color={getStageClass(singleEventData?.item?.stage_name)}
+                    custom='singleArtist'
                     title="Tilføj til mit program"
                     action={() => addEvent(userData.access_token)}
                   ></Button>
                 )}
+                <span>
+                <AiFillInstagram />
+                <AiFillFacebook />
+                <AiFillSpotify />
+                </span>
               </section>
               <section>
                 <h1>{singleEventData?.item?.title}</h1>
