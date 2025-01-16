@@ -154,6 +154,11 @@
 }
 
 .myProgram {
+
+  p{
+    font-size: 1.2vw;
+    padding: 4vw 0;
+  }
   h1 {
     @extend %trebuc;
     font-size: 2vw;

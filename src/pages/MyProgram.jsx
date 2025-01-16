@@ -110,7 +110,7 @@ export const MyProgram = () => {
             );
           })
         ) : (
-          <p>Ingen events i dit program</p>
+          <p>Hov, det ser ud til her er <b>tomt</b>! Tilføj nogle events til dit program på <b>Line-Up</b> siden! </p>
         )}
       </SectionWrapper>
     </SectionWrapper>
