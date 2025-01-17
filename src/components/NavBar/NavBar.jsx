@@ -10,6 +10,7 @@ export const NavBar = () => {
 
   function handleLogOut(){
     setUserData('');
+    sessionStorage.removeItem('userData');
     toast.info('Du er nu logget ud');
   }
   return (

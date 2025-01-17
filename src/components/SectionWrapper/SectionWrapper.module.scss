@@ -154,8 +154,7 @@
 }
 
 .myProgram {
-
-  p{
+  p {
     font-size: 1.2vw;
     padding: 4vw 0;
   }
@@ -317,6 +316,174 @@
       font-size: 1.2vw;
       padding: 0.5vw 0;
       text-align: left;
+    }
+  }
+}
+
+.ticketSection {
+  section {
+    padding: 1vw 0;
+    h1 {
+      background-color: $darkgrey;
+      color: $white;
+      font-size: 1.5vw;
+      text-align: left;
+      padding: 1vw;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      background-color: $lightgrey;
+      padding: 1vw;
+      border: 1px solid $darkgrey;
+      border-top: none;
+      align-items: center;
+
+      &:nth-child(odd) {
+        background-color: #cfcfcf;
+      }
+
+      p {
+        font-size: 1.5vw;
+        text-transform: uppercase;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+
+        button{
+          background-color: $red;
+          padding: 0.5vw 1vw;
+          margin-left: 3vw;
+          border-radius: 3px;
+          border: 1px solid $darkgrey;
+
+          &:hover{
+            background-color: $blue;
+          }
+
+          a{
+            color: white;
+            text-decoration: none;
+            font-size: 1.5vw;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+.buyTickets{
+  h2{
+    background-color: $darkgrey;
+    color: $white;
+    text-align: left;
+    padding: 1vw 2vw;
+    font-size: 2vw;
+    margin-top: 2vw;
+  }
+
+  h3{
+    background-color: white;
+    font-size: 1.8vw;
+    text-align: left;
+    margin: 0 2vw;
+    margin-top: 1vw;
+  }
+
+  p{
+    font-size: 1.5vw;
+    margin: 0 2vw;
+    margin-top: 1vw;
+    text-align: left;
+  }
+
+  div:first-of-type{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 1px solid $darkgrey;
+    padding: 1vw 0;
+
+    button{
+      font-size: 2vw;
+      padding: 0 1vw;
+      background-color: transparent;
+    }
+
+    p:nth-of-type(2){
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  div:nth-of-type(2){
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid $darkgrey;
+    align-items: center;
+    padding: 1vw 0;
+    p{
+      font-weight: 900;
+      padding-right: 1vw;
+    }
+  }
+
+  section{
+    section:nth-of-type(1){
+      padding: 2vw;
+      display: flex;
+      flex-direction: column;
+  
+      label{
+        font-size: 1.5vw;
+        text-align: left;
+        margin-bottom: 0.5vw;
+      }
+
+      select{
+        padding: 0.5vw;
+        width: 70%;
+        font-size: 1.5vw;
+        margin-bottom: 1.5vw;
+        filter: drop-shadow(5px 5px 10px #00000046);
+        border-radius: 5px;
+      }
+
+      span{
+        display: flex;
+        margin: 2vw 0;
+        margin-bottom: 1.5vw;
+        position: relative;
+        filter: drop-shadow(5px 5px 10px #00000046);
+
+        label{
+          position: absolute;
+          top: -60%;
+        }
+        div{
+          background-color: $blue;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+
+          svg{
+            color: $white;
+            padding: 0 1vw;
+            width: 1.5vw;
+            height: 1.5vw;
+          }
+        }
+
+        input{
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+      }
     }
   }
 }

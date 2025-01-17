@@ -10,6 +10,8 @@ import { MyProgram } from "./pages/MyProgram";
 import { PracticalInfo } from "./pages/PracticalInfo";
 import { Camps } from "./pages/Camps";
 import { SingleCampPage } from "./pages/SingleCampPage";
+import { Tickets } from "./pages/Tickets";
+import { Buy } from "./pages/Buy";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
             <Route path="/practicalinfo" element={<PracticalInfo/>}></Route>
             <Route path="/camps" element={<Camps/>}></Route>
             <Route path="/camps/:id" element={<SingleCampPage/>}></Route>
+            <Route path="/tickets" element={<Tickets/>}></Route>
+            <Route path="/tickets/:id" element={<Buy/>}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

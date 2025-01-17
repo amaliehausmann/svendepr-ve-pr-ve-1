@@ -1,6 +1,6 @@
 import style from "./Filter.module.scss";
 
-export const Filter = ({ handleDataFilter, selectedFilter }) => {
+export const Filter = ({ handleDataFilter }) => {
   const filters = [
     { text: "A-Å", value: null, class: "grey" },
     { text: "RØD SCENE", value: "Rød scene", class: "red" },
