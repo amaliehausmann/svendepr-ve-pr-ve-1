@@ -1,5 +1,17 @@
-.heroStyling{
-    height: 60vh;
-    background-repeat: no-repeat;
-    background-size: cover;
+.heroStyling {
+  height: 60vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media screen and (max-width: 1300px) {
+    height: 40vh;
+  }
+
+  @media screen and (max-width: 1050px) {
+    height: 35vh;
+  }
+
+  @media screen and (max-width: 750px) {
+    height: 25vh;
+  }
 }

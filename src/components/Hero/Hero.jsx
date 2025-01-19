@@ -1,5 +1,5 @@
-import React from 'react';
-import style from './Hero.module.scss';
+import React from "react";
+import style from "./Hero.module.scss";
 
 export const Hero = ({ backgroundUrl, position }) => {
   return (
@@ -9,7 +9,6 @@ export const Hero = ({ backgroundUrl, position }) => {
         backgroundPosition: `${position}`,
       }}
       className={style.heroStyling}
-    >
-    </section>
+    ></section>
   );
 };

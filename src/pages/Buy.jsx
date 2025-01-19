@@ -358,8 +358,8 @@ export const Buy = () => {
               </span>
             </SectionWrapper>
             <SectionWrapper>
+            <h3>Vælg forsendelsesmetode:</h3>
               <div>
-                <h3>Vælg forsendelsesmetode:</h3>
                 <label htmlFor="">
                   <input
                     type="radio"
@@ -371,7 +371,6 @@ export const Buy = () => {
                   />
                   Jeg ønsker billetterne tilsendt
                 </label>
-
                 <label htmlFor="">
                   <input
                     type="radio"

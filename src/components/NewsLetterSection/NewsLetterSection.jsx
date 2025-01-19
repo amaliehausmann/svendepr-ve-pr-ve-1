@@ -29,16 +29,16 @@ export const NewsLetterSection = ({ action }) => {
           name="email"
           id="email"
           labelText=""
-          invalid={!isValid && email ? 'invalid' : ''}
+          invalid={!isValid && email ? "invalid" : ""}
           action={handleEmailChange}
         />
         <Button
           title="TILMELD"
           color="blue"
-          custom='newsletter'
+          custom="newsletter"
           disabled={!isValid}
           action={action}
-          size='medium'
+          size="medium"
         ></Button>
       </span>
       <img src="../src/assets/images/hancock.png" alt="" />

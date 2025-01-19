@@ -51,6 +51,48 @@
       align-self: flex-start;
     }
   }
+
+  @media screen and (max-width: 1300px) {
+    div {
+      h1 {
+        font-size: 1.7vw;
+      }
+
+      p {
+        font-size: 1.2vw;
+        margin-bottom: 1vw;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+
+    div {
+      h1 {
+        font-size: 2.5vw;
+      }
+
+      p {
+        font-size: 1.6vw;
+        margin-bottom: 2vw;
+      }
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+
+    div {
+      height: 50%;
+      h1 {
+        font-size: 5vw;
+      }
+
+      p {
+        font-size: 4vw;
+        margin-bottom: 1vw;
+      }
+    }
+  }
 }
 
 .purple,

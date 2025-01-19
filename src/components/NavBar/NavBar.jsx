@@ -8,10 +8,10 @@ import { toast } from "react-toastify";
 export const NavBar = () => {
   const { userData, setUserData } = useContext(UserContext);
 
-  function handleLogOut(){
-    setUserData('');
-    sessionStorage.removeItem('userData');
-    toast.info('Du er nu logget ud');
+  function handleLogOut() {
+    setUserData("");
+    sessionStorage.removeItem("userData");
+    toast.info("Du er nu logget ud");
   }
   return (
     <nav className={style.navStyling}>
