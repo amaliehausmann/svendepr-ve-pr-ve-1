@@ -9,6 +9,18 @@
   h1 {
     font-size: 2vw;
     margin-bottom: 2vw;
+
+    @media screen and (max-width: 1300px) {
+      font-size: 2.5vw;
+    }
+
+    @media screen and (max-width: 1050px) {
+      font-size: 3vw;
+    }
+
+    @media screen and (max-width: 750px) {
+      font-size: 4vw;
+    }
   }
 }
 
@@ -44,10 +56,12 @@
 
 .singleNews {
   padding: 3vw 18vw;
+
   span {
     border-bottom: 2px solid $black;
     display: flex;
     justify-content: space-between;
+
     h1 {
       @extend %trebuc;
       font-size: 2vw;
@@ -58,48 +72,184 @@
     }
 
     a {
+      @extend %trebuc;
+      color: $black;
+      font-size: 1vw;
+      align-self: flex-end;
+      margin-bottom: 1vw;
+
       svg {
         width: 1vw;
         height: 1vw;
         vertical-align: -3px;
       }
-
-      color: black;
-      @extend %trebuc;
-      font-size: 1vw;
-      align-self: flex-end;
-      margin-bottom: 1vw;
     }
   }
 
   section {
     h1 {
       @extend %trebuc;
+      font-size: 1.5vw;
       text-align: left;
       color: $black;
-      font-size: 1.5vw;
-      border: none;
       margin-top: 2vw;
-      padding-bottom: 0;
       font-weight: 400;
     }
 
     p {
-      font-size: 1vw;
       @extend %trebuc;
+      font-size: 1vw;
       text-align: left;
       margin-top: 1vw;
-    }
 
-    p:nth-of-type(2) {
-      margin-bottom: 1vw;
-      margin-top: 0.5vw;
-      font-size: 0.8vw;
+      &:nth-of-type(2) {
+        margin-top: 0.5vw;
+        margin-bottom: 1vw;
+        font-size: 0.8vw;
+      }
     }
 
     img {
       width: 100%;
       border-radius: 5px;
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    padding: 3vw 18vw;
+
+    span {
+      h1 {
+        font-size: 2.5vw;
+        margin-bottom: 0.5vw;
+        padding-bottom: 0.5vw;
+      }
+
+      a {
+        font-size: 1.5vw;
+        margin-bottom: 1vw;
+
+        svg {
+          width: 1.5vw;
+          height: 1.5vw;
+          vertical-align: -3px;
+        }
+      }
+    }
+
+    section {
+      h1 {
+        font-size: 2.5vw;
+        margin-top: 2vw;
+      }
+
+      p {
+        font-size: 1.5vw;
+        margin-top: 1vw;
+
+        &:nth-of-type(2) {
+          margin-top: 0.5vw;
+          margin-bottom: 1vw;
+          font-size: 1.2vw;
+        }
+      }
+
+      img {
+        width: 100%;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    padding: 3vw 14vw;
+
+    span {
+      h1 {
+        font-size: 3vw;
+        margin-bottom: 0.5vw;
+        padding-bottom: 0.5vw;
+      }
+
+      a {
+        font-size: 1.7vw;
+        margin-bottom: 1vw;
+
+        svg {
+          width: 1.7vw;
+          height: 1.7vw;
+          vertical-align: -3px;
+        }
+      }
+    }
+
+    section {
+      h1 {
+        font-size: 3vw;
+        margin-top: 2vw;
+      }
+
+      p {
+        font-size: 1.8vw;
+        margin-top: 1vw;
+
+        &:nth-of-type(2) {
+          margin-top: 0.5vw;
+          margin-bottom: 1vw;
+          font-size: 1.5vw;
+        }
+      }
+
+      img {
+        width: 100%;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    padding: 3vw 10vw;
+
+    span {
+      h1 {
+        font-size: 4vw;
+        margin-bottom: 0.5vw;
+        padding-bottom: 0.5vw;
+      }
+
+      a {
+        font-size: 2.5vw;
+        margin-bottom: 1vw;
+
+        svg {
+          width: 2.5vw;
+          height: 2.5vw;
+          vertical-align: -3px;
+        }
+      }
+    }
+
+    section {
+      h1 {
+        font-size: 4vw;
+        margin-top: 2vw;
+      }
+
+      p {
+        font-size: 2.5vw;
+        margin-top: 1vw;
+
+        &:nth-of-type(2) {
+          margin-top: 0.5vw;
+          margin-bottom: 1vw;
+          font-size: 2.3vw;
+        }
+      }
+
+      img {
+        width: 100%;
+        border-radius: 5px;
+      }
     }
   }
 }
@@ -108,31 +258,33 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 6vh 0 30vh 0;
+  padding: 4vw 0 12vw 0;
+
+  h1,
+  h2,
+  h3,
+  p {
+    @extend %trebuc;
+  }
 
   h1 {
-    @extend %trebuc;
     letter-spacing: 1px;
     font-size: 1.5vw;
   }
 
   h2 {
-    @extend %trebuc;
     margin-top: 7vw;
     font-size: 2vw;
     font-weight: 500;
   }
 
   h3 {
-    @extend %trebuc;
     font-size: 1vw;
     font-weight: 400;
-    margin-top: 2vw;
-    margin-bottom: 1vw;
+    margin: 2vw 0 1vw;
   }
 
   p {
-    @extend %trebuc;
     margin-top: 1vw;
     color: orange;
     font-size: 1vw;
@@ -141,17 +293,14 @@
 
   span {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    margin: auto;
-    margin-top: 1vw;
+    margin: 1vw auto 0;
     width: fit-content;
     filter: drop-shadow(5px 5px 10px #00000019);
 
     div {
       background-color: $blue;
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
+      border-radius: 5px 0 0 5px;
       display: flex;
       align-items: center;
 
@@ -160,6 +309,111 @@
         width: 1vw;
         height: 1vw;
         padding: 0.5vw;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    padding: 4vw 0 12vw 0;
+
+    h1 {
+      font-size: 2vw;
+    }
+
+    h2 {
+      margin-top: 7vw;
+      font-size: 2.3vw;
+    }
+
+    h3 {
+      font-size: 1.8vw;
+      margin: 1vw 0 1vw;
+    }
+
+    p {
+      margin-top: 1vw;
+      font-size: 1.3vw;
+    }
+
+    span {
+      margin: 1vw auto 0 auto;
+
+      div {
+        svg {
+          width: 1vw;
+          height: 1vw;
+          padding: 1vw;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    padding: 4vw 0 12vw 0;
+
+    h1 {
+      font-size: 2.5vw;
+    }
+
+    h2 {
+      margin-top: 7vw;
+      font-size: 3vw;
+    }
+
+    h3 {
+      font-size: 2vw;
+      margin: 1vw 0 1vw;
+    }
+
+    p {
+      margin-top: 1vw;
+      font-size: 1.5vw;
+    }
+
+    span {
+      margin: 1vw auto 0 auto;
+
+      div {
+        svg {
+          width: 1.5vw;
+          height: 1.5vw;
+          padding: 1vw;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    padding: 4vw 0 10vw 0;
+
+    h1 {
+      font-size: 4vw;
+    }
+
+    h2 {
+      margin-top: 7vw;
+      font-size: 5vw;
+    }
+
+    h3 {
+      font-size: 3vw;
+      margin: 1vw 0 1vw;
+    }
+
+    p {
+      margin-top: 1vw;
+      font-size: 2.5vw;
+    }
+
+    span {
+      margin: 1vw auto 0 auto;
+
+      div {
+        svg {
+          width: 2vw;
+          height: 2vw;
+          padding: 2vw;
+        }
       }
     }
   }
@@ -172,11 +426,35 @@
     font-size: 2vw;
     margin-bottom: 2vw;
   }
+
+  @media screen and (max-width: 1300px) {
+    padding: 3vw 8vw;
+    h1 {
+      font-size: 2.5vw;
+      margin-bottom: 2vw;
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    padding: 3vw 6vw;
+    h1 {
+      font-size: 3vw;
+      margin-bottom: 3vw;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    padding: 3vw 6vw;
+    h1 {
+      font-size: 4vw;
+      margin-bottom: 5vw;
+    }
+  }
 }
 
 .myProgram {
   p {
-    font-size: 1.2vw;
+    font-size: 1.5vw;
     padding: 4vw 0;
   }
   h1 {
@@ -216,6 +494,112 @@
         svg {
           width: 3vw;
           height: 2vw;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    p {
+      font-size: 2vw;
+      padding: 4vw 0;
+    }
+    h1 {
+      font-size: 2.5vw;
+    }
+
+    section {
+      padding-top: 2vw;
+
+      div {
+        span {
+          font-size: 2vw;
+          width: 4vw;
+          padding: 1vw;
+        }
+
+        h1 {
+          font-size: 2.5vw;
+          padding-left: 2vw;
+          padding-top: 1vw;
+        }
+
+        button {
+          svg {
+            width: 3vw;
+            height: 3vw;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    p {
+      font-size: 2.5vw;
+      padding: 4vw 0;
+    }
+    h1 {
+      font-size: 3vw;
+    }
+
+    section {
+      padding-top: 3vw;
+
+      div {
+        span {
+          font-size: 2vw;
+          width: 4vw;
+          padding: 2vw;
+        }
+
+        h1 {
+          font-size: 3vw;
+          padding-left: 2vw;
+          padding-top: 1vw;
+        }
+
+        button {
+          svg {
+            width: 3.5vw;
+            height: 3.5vw;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    padding: 3vw 6vw;
+    p {
+      font-size: 3.5vw;
+      padding: 4vw 0;
+    }
+    h1 {
+      font-size: 3.5vw;
+    }
+
+    section {
+      padding-top: 3vw;
+
+      div {
+        span {
+          font-size: 3vw;
+          width: 5vw;
+          padding: 2vw;
+        }
+
+        h1 {
+          font-size: 4vw;
+          padding-left: 2vw;
+          padding-top: 1vw;
+        }
+
+        button {
+          svg {
+            width: 4vw;
+            height: 4vw;
+          }
         }
       }
     }
@@ -274,8 +658,6 @@
     padding: 0;
     text-align: left;
     padding-bottom: 4vw;
-    article {
-    }
 
     iframe {
       border: 0;
@@ -290,6 +672,132 @@
 
     h2 {
       text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    padding-bottom: 10vw;
+
+    h1 {
+      font-size: 2.5vw;
+      padding-bottom: 2vw;
+    }
+
+    h2 {
+      font-size: 2vw;
+      padding-bottom: 1vw;
+    }
+
+    h3 {
+      font-size: 1.7vw;
+      padding-top: 1.5vw;
+    }
+
+    p {
+      font-size: 1.4vw;
+    }
+
+    ul {
+      padding: 0;
+
+      li {
+        padding: 0.5vw 0;
+        font-size: 1.4vw;
+      }
+    }
+
+    .mapSection {
+      padding: 0;
+      padding-bottom: 4vw;
+    }
+
+    .directions {
+      padding: 0;
+      padding-bottom: 4vw;
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    padding-bottom: 10vw;
+
+    h1 {
+      font-size: 3vw;
+      padding-bottom: 2vw;
+    }
+
+    h2 {
+      font-size: 2.5vw;
+      padding-bottom: 1vw;
+    }
+
+    h3 {
+      font-size: 2vw;
+      padding-top: 1.5vw;
+    }
+
+    p {
+      font-size: 1.8vw;
+    }
+
+    ul {
+      padding: 0;
+
+      li {
+        padding: 0.5vw 0;
+        font-size: 1.8vw;
+      }
+    }
+
+    .mapSection {
+      padding: 0;
+      padding-bottom: 4vw;
+    }
+
+    .directions {
+      padding: 0;
+      padding-bottom: 4vw;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    padding-bottom: 10vw;
+
+    h1 {
+      font-size: 4vw;
+      padding-bottom: 2vw;
+    }
+
+    h2 {
+      font-size: 3.5vw;
+      padding-bottom: 1vw;
+    }
+
+    h3 {
+      font-size: 3vw;
+      padding-top: 1.5vw;
+    }
+
+    p {
+      font-size: 2.8vw;
+    }
+
+    ul {
+      padding: 0;
+
+      li {
+        padding: 0.5vw 0;
+        font-size: 2.8vw;
+      }
+    }
+
+    .mapSection {
+      padding: 0;
+      padding-bottom: 8vw;
+    }
+
+    .directions {
+      padding: 0;
+      padding-bottom: 8vw;
     }
   }
 }
@@ -337,6 +845,106 @@
       font-size: 1.2vw;
       padding: 0.5vw 0;
       text-align: left;
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    button {
+      left: 12%;
+      top: 4%;
+      a {
+        font-size: 1.5vw;
+      }
+
+      svg {
+        width: 1.5vw;
+        height: 1.5vw;
+        vertical-align: -3px;
+      }
+    }
+
+    h3 {
+      font-size: 2vw;
+      margin-top: 2vw;
+    }
+
+    p {
+      font-size: 1.7vw;
+    }
+
+    ul {
+      margin-top: 1vw;
+      li {
+        font-size: 1.7vw;
+        padding: 0.5vw 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    button {
+      left: 12%;
+      top: 4%;
+      a {
+        font-size: 2vw;
+      }
+
+      svg {
+        width: 2vw;
+        height: 2vw;
+        vertical-align: -3px;
+      }
+    }
+
+    h3 {
+      font-size: 2.5vw;
+      margin-top: 2vw;
+    }
+
+    p {
+      font-size: 2vw;
+    }
+
+    ul {
+      margin-top: 1vw;
+      li {
+        font-size: 2vw;
+        padding: 0.5vw 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    padding: 3vw 6vw;
+    button {
+      left: 6%;
+      top: 3%;
+      a {
+        font-size: 3vw;
+      }
+
+      svg {
+        width: 3vw;
+        height: 3vw;
+        vertical-align: -3px;
+      }
+    }
+
+    h3 {
+      font-size: 4vw;
+      margin-top: 2vw;
+    }
+
+    p {
+      font-size: 3vw;
+    }
+
+    ul {
+      margin-top: 1vw;
+      li {
+        font-size: 3vw;
+        padding: 0.5vw 0;
+      }
     }
   }
 }
@@ -391,6 +999,103 @@
             color: white;
             text-decoration: none;
             font-size: 1.5vw;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    section {
+      padding: 1vw 0;
+      h1 {
+        font-size: 1.8vw;
+        padding: 1vw;
+        margin-bottom: 0;
+      }
+
+      div {
+        padding: 1vw;
+
+        p {
+          font-size: 1.8vw;
+        }
+
+        span {
+          display: flex;
+
+          button {
+            padding: 0.5vw 1vw;
+            margin-left: 3vw;
+
+            a {
+              font-size: 1.8vw;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    section {
+      padding: 1vw 0;
+      h1 {
+        font-size: 2.2vw;
+        padding: 1vw;
+        margin-bottom: 0;
+      }
+
+      div {
+        padding: 1vw;
+
+        p {
+          font-size: 2.2vw;
+        }
+
+        span {
+          display: flex;
+
+          button {
+            padding: 0.5vw 1vw;
+            margin-left: 3vw;
+
+            a {
+              font-size: 2.2vw;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    padding: 5vw 6vw;
+    section {
+      padding: 1vw 0;
+      h1 {
+        font-size: 4vw;
+        padding: 1vw;
+        margin-bottom: 0;
+      }
+
+      div {
+        padding: 2vw 1vw;
+
+        p {
+          font-size: 3vw;
+        }
+
+        span {
+          display: flex;
+
+          button {
+            padding: 0.5vw 2vw;
+            margin-left: 3vw;
+
+            a {
+              font-size: 3vw;
+            }
           }
         }
       }
@@ -556,6 +1261,335 @@
         font-size: 1.5vw;
         padding: 1vw 3vw;
         right: 2vw;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    padding: 3vw 10vw;
+    h2 {
+      padding: 1vw 2vw;
+      font-size: 2.2vw;
+      margin-top: 2vw;
+    }
+
+    h3 {
+      font-size: 2vw;
+      margin: 0 2vw;
+      margin-top: 1vw;
+    }
+
+    p {
+      font-size: 1.7vw;
+      margin: 0 2vw;
+      margin-top: 1.5vw;
+    }
+
+    div:first-of-type {
+      padding: 1vw 0;
+
+      button {
+        font-size: 2.5vw;
+        padding: 0 1vw;
+      }
+
+      p:nth-of-type(4) {
+        padding-left: 0;
+      }
+    }
+
+    div:nth-of-type(2) {
+      padding: 1vw 0;
+      p {
+        padding-right: 1vw;
+      }
+    }
+
+    section {
+      section:nth-of-type(1) {
+        padding: 2vw;
+
+        label {
+          font-size: 1.7vw;
+          margin-bottom: 0.5vw;
+        }
+
+        select {
+          padding: 0.5vw;
+          width: 80%;
+          font-size: 1.7vw;
+          margin-bottom: 1.5vw;
+        }
+
+        span {
+          margin: 2vw 0;
+          margin-bottom: 1.5vw;
+
+          label {
+            top: -62%;
+          }
+          div {
+            svg {
+              padding: 0 1vw;
+              width: 1.5vw;
+              height: 1.5vw;
+            }
+          }
+
+          input {
+            font-size: 1.7vw;
+            width: 68%;
+
+            &::placeholder {
+              font-size: 1.7vw;
+            }
+          }
+        }
+      }
+
+      section:nth-of-type(2) {
+        padding: 2vw;
+
+        h3 {
+          font-size: 1.7vw;
+        }
+
+        div {
+          input {
+            margin: 0;
+            margin-right: 1vw;
+            margin-bottom: 1vw;
+          }
+
+          label {
+            font-size: 1.7vw;
+          }
+        }
+
+        button {
+          font-size: 1.7vw;
+          padding: 1vw 3vw;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    padding: 3vw 8vw;
+    h2 {
+      padding: 1vw 2vw;
+      font-size: 2.5vw;
+      margin-top: 2vw;
+    }
+
+    h3 {
+      font-size: 2.2vw;
+      margin: 0 2vw;
+      margin-top: 1vw;
+    }
+
+    p {
+      font-size: 1.9vw;
+      font-weight: 500;
+      margin: 0 2vw;
+      margin-top: 1.5vw;
+    }
+
+    div:first-of-type {
+      padding: 1vw 0;
+
+      button {
+        font-size: 3vw;
+        padding: 0 1vw;
+      }
+
+      p:nth-of-type(4) {
+        padding-left: 0;
+      }
+    }
+
+    div:nth-of-type(2) {
+      padding: 1vw 0;
+      p {
+        padding-right: 1vw;
+      }
+    }
+
+    section {
+      section:nth-of-type(1) {
+        padding: 2vw;
+
+        label {
+          font-size: 1.9vw;
+          margin-bottom: 0.5vw;
+        }
+
+        select {
+          padding: 0.5vw;
+          width: 90%;
+          font-size: 1.9vw;
+          margin-bottom: 1.5vw;
+        }
+
+        span {
+          margin: 2vw 0;
+          margin-bottom: 1.5vw;
+
+          label {
+            top: -62%;
+          }
+          div {
+            svg {
+              padding: 0 1vw;
+              width: 2vw;
+              height: 2vw;
+            }
+          }
+
+          input {
+            font-size: 1.9vw;
+            width: 78%;
+
+            &::placeholder {
+              font-size: 1.9vw;
+            }
+          }
+        }
+      }
+
+      section:nth-of-type(2) {
+        padding: 2vw;
+
+        h3 {
+          font-size: 1.7vw;
+        }
+
+        div {
+          input {
+            margin: 0;
+            margin-right: 1vw;
+            margin-bottom: 1vw;
+          }
+
+          label {
+            font-size: 1.7vw;
+          }
+        }
+
+        button {
+          font-size: 1.7vw;
+          padding: 1vw 3vw;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    padding: 3vw 4vw;
+    h2 {
+      padding: 1vw 2vw;
+      font-size: 3vw;
+      margin-top: 2vw;
+    }
+
+    h3 {
+      font-size: 3vw;
+      margin: 0 2vw;
+      margin-top: 1vw;
+    }
+
+    p {
+      font-size: 2.7vw;
+      font-weight: 500;
+      margin: 0 2vw;
+      margin-top: 3vw;
+    }
+
+    div:first-of-type {
+      padding: 1vw 0;
+
+      button {
+        font-size: 3vw;
+        padding: 0 1vw;
+      }
+
+      p:nth-of-type(4) {
+        padding-left: 0;
+      }
+    }
+
+    div:nth-of-type(2) {
+      padding: 1vw 0;
+      p {
+        padding-right: 1vw;
+      }
+    }
+
+    section {
+      section:nth-of-type(1) {
+        padding: 2vw;
+
+        label {
+          font-size: 2.7vw;
+          margin-bottom: 0.5vw;
+        }
+
+        select {
+          padding: 1vw 2vw;
+          width: 100%;
+          font-size: 1.9vw;
+          margin-bottom: 2.7vw;
+        }
+
+        span {
+          margin: 2vw 0;
+          margin-bottom: 3vw;
+
+          label {
+            top: -50%;
+          }
+          div {
+            svg {
+              padding: 1vw 1vw;
+              width: 3vw;
+              height: 3vw;
+            }
+          }
+
+          input {
+            font-size: 2.7vw;
+            width: 100%;
+
+            &::placeholder {
+              font-size: 2.7vw;
+            }
+          }
+        }
+      }
+
+      section:nth-of-type(2) {
+        padding: 2vw;
+
+        h3 {
+          font-size: 2.7vw;
+        }
+
+        div {
+          input {
+            margin: 0;
+            margin-right: 1vw;
+            margin-bottom: 1vw;
+          }
+
+          label {
+            font-size: 2.7vw;
+          }
+        }
+
+        button {
+          font-size: 2.7vw;
+          padding: 1vw 6vw;
+        }
       }
     }
   }

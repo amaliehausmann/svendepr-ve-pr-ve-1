@@ -25,7 +25,7 @@ export const Camps = () => {
                 <span>
                     <ul>
                         {item.tickets?.map((item) => (
-                            <li>{item.name}</li>
+                            <li key={item.id}>{item.name}</li>
                         ))}
                     </ul>
                 </span>

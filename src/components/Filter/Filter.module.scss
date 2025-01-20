@@ -1,41 +1,71 @@
-@use '../../styles/placeholders' as *;
-@use '../../styles/variables' as *;
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
 
 .filtersection {
+  background-color: $darkgrey;
+  margin-bottom: 2vw;
 
-    background-color: $darkgrey;
-    margin-bottom: 2vw;
+  ul {
+    display: flex;
+    justify-content: space-between;
 
-    ul{
-        display: flex;
-        justify-content: space-between;
-
-        li{
-            @extend %trebuc;
-            font-size: 2.5vw;
-            list-style: none;
-            color: white;
-            cursor: pointer;
-            padding: 1vw 2vw;
-        }
+    li {
+      @extend %trebuc;
+      font-size: 2.5vw;
+      list-style: none;
+      color: white;
+      cursor: pointer;
+      padding: 1vw 2vw;
     }
   }
 
-  .purple:hover{
-    background-color: $purple;
-  }
-  .blue:hover{
-    background-color: $blue;
-  }
-  .green:hover{
-    background-color: $green;
-  }
-  .red:hover{
-    background-color: $red;
+  @media screen and (max-width: 1300px) {
+    margin-bottom: 2vw;
+    ul {
+      li {
+        font-size: 2.7vw;
+        padding: 1vw 2vw;
+      }
+    }
   }
 
-  .grey:hover{
-    background-color: grey;
+  @media screen and (max-width: 1050px) {
+    margin-bottom: 2vw;
+    ul {
+      li {
+        font-size: 3vw;
+        padding: 1vw 1vw;
+      }
+    }
   }
 
- 
+  @media screen and (max-width: 750px) {
+    margin-bottom: 2vw;
+    ul {
+      flex-direction: column;
+      text-align: left;
+      li {
+        font-size: 4vw;
+        padding: 1vw 1vw;
+        padding-left: 2vw;
+      }
+    }
+  }
+}
+
+.purple:hover {
+  background-color: $purple;
+}
+.blue:hover {
+  background-color: $blue;
+}
+.green:hover {
+  background-color: $green;
+}
+.red:hover {
+  background-color: $red;
+}
+
+.grey:hover {
+  background-color: grey;
+}

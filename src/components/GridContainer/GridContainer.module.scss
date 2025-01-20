@@ -44,10 +44,22 @@
 
   @media screen and (max-width: 750px) {
     grid-template-columns: 1fr;
-    gap: 8vw;
+    gap: 4vw;
   }
 }
 
 .one {
   gap: 1.5vw 1.5vw;
+
+  @media screen and (max-width: 1300px){
+    gap: 2vw;
+  }
+
+  @media screen and (max-width: 1050px){
+    gap: 2.5vw;
+  }
+
+  @media screen and (max-width: 750px){
+    gap: 4vw;
+  }
 }

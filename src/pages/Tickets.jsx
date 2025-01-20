@@ -21,7 +21,7 @@ export const Tickets = () => {
         <SectionWrapper>
             <h1>PARTOUTBILLETTER - ALLE DAGE</h1>
           {partoutTickets?.map((item) => (
-            <div>
+            <div key={item.id}>
               <p>{item.name}</p>
               <span>
               <p>{item.price} DKK</p>
@@ -35,7 +35,7 @@ export const Tickets = () => {
         <SectionWrapper>
             <h1>ENKELTBILLETTER</h1>
           {oneDayTicket?.map((item) => (
-            <div>
+            <div key={item.id}>
               <p>{item.name.replace('Enkeltbillet', 'billet -', )}</p>
               <span>
               <p>{item.price} DKK</p>
