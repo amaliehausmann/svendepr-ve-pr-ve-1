@@ -12,6 +12,15 @@ export const SingleNewsPage = () => {
     `https://api.mediehuset.net/mediesuset/news/${id}`
   );
 
+
+function convertToDate(datetimeString) {
+  const utcDate = new Date(datetimeString + " UTC"); // Parse as UTC
+  const options = { timeZone: "Europe/Copenhagen", year: "numeric", month: "2-digit", day: "2-digit" };
+  return new Intl.DateTimeFormat("da-DK", options).format(utcDate);
+}
+
+
+
   return (
     <>
       <Hero backgroundUrl="../src/assets/images/hero1.webp"  position='bottom'/>
@@ -24,6 +33,7 @@ export const SingleNewsPage = () => {
           <section>
             <h1>{data.item.title}</h1>
             <p>Forfatter: {data.item.author}</p>
+            <p>Skrevet d. {convertToDate(data.item.datetime)}</p>
             <img src={data.item.image} alt="" />
             <p>{data.item.content}</p>
           </section>

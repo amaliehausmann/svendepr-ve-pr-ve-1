@@ -62,6 +62,51 @@
             padding: 1vw;
         }
     }
+
+    @media screen and (max-width: 1300px){
+
+        div{
+            height: 50vh;
+            h1{
+                font-size: 3vw;
+                margin-top: 10vw;
+            }
+    
+            p{
+                font-size: 2vw;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1050px){
+
+        div{
+            height: 50vh;
+            h1{
+                font-size: 4vw;
+                margin-top: 14vw;
+            }
+    
+            p{
+                font-size: 2.5vw;
+            }
+        }
+    }
+
+    @media screen and (max-width: 750px){
+
+        div{
+            height: 30vh;
+            h1{
+                font-size: 4.5vw;
+                margin-top: 12vw;
+            }
+    
+            p{
+                font-size: 3vw;
+            }
+        }
+    }
 }
 
 .red, .blue, .green, .purple{
