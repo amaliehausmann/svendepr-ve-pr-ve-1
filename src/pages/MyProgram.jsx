@@ -6,6 +6,7 @@ import { Button } from "../components/Button/Button";
 import { IoMdClose } from "react-icons/io";
 import { toast } from "react-toastify";
 import { Hero } from "../components/Hero/Hero";
+import { PageTitle } from "../components/PageTitle/PageTitle";
 
 export const MyProgram = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -29,7 +30,7 @@ export const MyProgram = () => {
       .map((e) => arr[e]);
   }
 
-// Opdaterer programData hver gang data opdateres
+  // Opdaterer programData hver gang data opdateres
   useEffect(() => {
     if (data?.items) {
       const uniqueData = getUnique(data.items, "event_id");
@@ -89,31 +90,35 @@ export const MyProgram = () => {
 
   return (
     <>
-    <Hero backgroundUrl='../src/assets/images/hero1.webp' position='bottom'/>
-        <SectionWrapper customStyling="myProgram">
-      <h1>MIT PROGRAM</h1>
-      <SectionWrapper>
-        {programData.length > 0 ? (
-          programData.map((item) => {
-            // Bestemmer class for hver scene
-            let stageClass = getStageClass(item.stage_name);
-            return (
-              <div key={item.event_id}>
-                <span style={{ backgroundColor: `${stageClass}` }}>TID</span>
-                <h1>{item.event_title}</h1>
-                <Button
-                  action={() => deleteEvent(userData?.access_token, item.id)}
-                >
-                  <IoMdClose />
-                </Button>
-              </div>
-            );
-          })
-        ) : (
-          <p>Hov, det ser ud til her er <b>tomt</b>! Tilføj nogle events til dit program på <b>Line-Up</b> siden! </p>
-        )}
+      <PageTitle pageTitle="Mit Program" />
+      <Hero backgroundUrl="../src/assets/images/hero1.webp" position="bottom" />
+      <SectionWrapper customStyling="myProgram">
+        <h1>MIT PROGRAM</h1>
+        <SectionWrapper>
+          {programData.length > 0 ? (
+            programData.map((item) => {
+              // Bestemmer class for hver scene
+              let stageClass = getStageClass(item.stage_name);
+              return (
+                <div key={item.event_id}>
+                  <span style={{ backgroundColor: `${stageClass}` }}>TID</span>
+                  <h1>{item.event_title}</h1>
+                  <Button
+                    action={() => deleteEvent(userData?.access_token, item.id)}
+                  >
+                    <IoMdClose />
+                  </Button>
+                </div>
+              );
+            })
+          ) : (
+            <p>
+              Hov, det ser ud til her er <b>tomt</b>! Tilføj nogle events til
+              dit program på <b>Line-Up</b> siden!{" "}
+            </p>
+          )}
+        </SectionWrapper>
       </SectionWrapper>
-    </SectionWrapper>
     </>
   );
 };

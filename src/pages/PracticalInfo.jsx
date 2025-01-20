@@ -1,10 +1,12 @@
 import { GridContainer } from "../components/GridContainer/GridContainer";
 import { Hero } from "../components/Hero/Hero";
+import { PageTitle } from "../components/PageTitle/PageTitle";
 import { SectionWrapper } from "../components/SectionWrapper/SectionWrapper";
 
 export const PracticalInfo = () => {
   return (
     <>
+      <PageTitle pageTitle="Praktisk Info" />
       <Hero
         backgroundUrl="../src/assets/images/hero3.webp"
         position="center 80%"

@@ -12,6 +12,7 @@ import { toast } from "react-toastify";
 import { AiFillInstagram } from "react-icons/ai";
 import { AiFillFacebook } from "react-icons/ai";
 import { AiFillSpotify } from "react-icons/ai";
+import { PageTitle } from "../components/PageTitle/PageTitle";
 
 export const Lineup = () => {
   const [selectedFilter, setSelectedFilter] = useState(null);
@@ -148,6 +149,7 @@ export const Lineup = () => {
 
   return (
     <>
+      <PageTitle pageTitle="Line-Up" />
       <Hero backgroundUrl="../src/assets/images/hero1.webp" position="bottom" />
       <SectionWrapper customStyling="lineup">
         <h1>LINE UP</h1>
@@ -186,15 +188,15 @@ export const Lineup = () => {
                 {userData && (
                   <Button
                     color={getStageClass(singleEventData?.item?.stage_name)}
-                    custom='singleArtist'
+                    custom="singleArtist"
                     title="Tilføj til mit program"
                     action={() => addEvent(userData.access_token)}
                   ></Button>
                 )}
                 <span>
-                <AiFillInstagram />
-                <AiFillFacebook />
-                <AiFillSpotify />
+                  <AiFillInstagram />
+                  <AiFillFacebook />
+                  <AiFillSpotify />
                 </span>
               </section>
               <section>

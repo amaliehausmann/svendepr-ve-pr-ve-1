@@ -4,6 +4,7 @@ import { Hero } from "../components/Hero/Hero";
 import { SectionWrapper } from "../components/SectionWrapper/SectionWrapper";
 import { Button } from "../components/Button/Button";
 import { IoChevronBack } from "react-icons/io5";
+import { PageTitle } from "../components/PageTitle/PageTitle";
 
 export const SingleCampPage = () => {
   const { id } = useParams();
@@ -12,13 +13,17 @@ export const SingleCampPage = () => {
 
   return (
     <>
+      <PageTitle pageTitle="Camp" />
       <Hero
         backgroundUrl="../src/assets/images/hero2.webp"
         position="center 20%"
       />
-      <SectionWrapper customStyling='singleCamp'>
+      <SectionWrapper customStyling="singleCamp">
         <Button>
-          <NavLink to="/camps"> <IoChevronBack/> Tilbage til camps</NavLink>
+          <NavLink to="/camps">
+            {" "}
+            <IoChevronBack /> Tilbage til camps
+          </NavLink>
         </Button>
         <h1>{data?.item?.name}</h1>
         <img src={data?.item?.image} alt="" />
@@ -26,7 +31,7 @@ export const SingleCampPage = () => {
         <p>{data?.item?.description}</p>
         <h3>Antal pladser:</h3>
         <ul>
-            <li>{data?.item?.num_people}</li>
+          <li>{data?.item?.num_people}</li>
         </ul>
         <h3>Billetter der giver adgang:</h3>
         <ul>

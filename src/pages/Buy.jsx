@@ -14,6 +14,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import { FaCity } from "react-icons/fa6";
 import { UserContext } from "../context/userContext";
 import { toast } from "react-toastify";
+import { PageTitle } from "../components/PageTitle/PageTitle";
 
 export const Buy = () => {
   const { id } = useParams();
@@ -193,6 +194,7 @@ export const Buy = () => {
   //POST
   return (
     <>
+      <PageTitle pageTitle="Køb Billet" />
       <Hero
         backgroundUrl="../src/assets/images/hero3.webp"
         position="center 80%"
@@ -255,7 +257,9 @@ export const Buy = () => {
               >
                 <option value="">----</option>
                 {data?.item.camps.map((item) => (
-                  <option key={item.id} value={item.id}>{item.name}</option>
+                  <option key={item.id} value={item.id}>
+                    {item.name}
+                  </option>
                 ))}
               </select>
               <span>
@@ -358,7 +362,7 @@ export const Buy = () => {
               </span>
             </SectionWrapper>
             <SectionWrapper>
-            <h3>Vælg forsendelsesmetode:</h3>
+              <h3>Vælg forsendelsesmetode:</h3>
               <div>
                 <label htmlFor="">
                   <input
