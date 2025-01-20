@@ -12,6 +12,8 @@ import { Camps } from "./pages/Camps";
 import { SingleCampPage } from "./pages/SingleCampPage";
 import { Tickets } from "./pages/Tickets";
 import { Buy } from "./pages/Buy";
+import { Program } from "./pages/Program";
+import { PageNotFound } from "./pages/PageNotFound";
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
             <Route path="/camps/:id" element={<SingleCampPage/>}></Route>
             <Route path="/tickets" element={<Tickets/>}></Route>
             <Route path="/tickets/:id" element={<Buy/>}></Route>
+            <Route path="/program" element={<Program/>}></Route>
+            <Route path="/*" element={<PageNotFound/>}></Route>
           </Route>
         </Routes>
       </BrowserRouter>
